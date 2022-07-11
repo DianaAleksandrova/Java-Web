@@ -17,13 +17,11 @@ public class UserService {
     private final UserRepository userRepository;
     private Logger LOGGER = LoggerFactory.getLogger(UserService.class);
     private final CurrentUser currentUser;
-    private final PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, CurrentUser currentUser,
-                       PasswordEncoder passwordEncoder) {
+    public UserService(UserRepository userRepository, CurrentUser currentUser) {
         this.userRepository = userRepository;
         this.currentUser = currentUser;
-        this.passwordEncoder = passwordEncoder;
     }
 
     public boolean login(UserLoginDto userLoginDto){
